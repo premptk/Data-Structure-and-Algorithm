@@ -7,7 +7,18 @@ void addedge(vector<int> adj[], int u, int v)
     adj[u].push_back(v);
 }
 
-void dfs(vector<int> adj[], int x, int v)
+void printGraph(vector<int> adj[], int v)
+{
+    for(int i=0;i<v;i++)
+    {
+        cout<<i<<" - ";
+        for(int j : adj[i])
+            cout<<j<<" ";
+        cout<<"\n";
+    }
+}
+
+void bfs(vector<int> adj[], int x, int v)
 {
     bool visited[v];
     for(int i=0;i<v;i++)
