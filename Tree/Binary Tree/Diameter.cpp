@@ -22,6 +22,17 @@ int Diameter(TreeNode* root, int &diameter)
     return max(lh,rh)+1;
 }
 
+
+int MaxPathsum(TreeNode* root, int &maxSum)
+{
+    if(root==NULL)
+        return 0;
+    int lsum = max(0, MaxPathsum(root->left,maxSum));
+    int rsum = max(0, MaxPathsum(root->right, maxSum));
+    maxSum = max(maxSum, lsum + rsum + root->data);
+    return max(lsum,rsum) + root->data;
+}
+
 int main()
 {
     TreeNode* root=NULL;
@@ -34,6 +45,8 @@ int main()
     root->left->right->right->right = new TreeNode(60);
     int diameter=0;
     Diameter(root,diameter);
-    cout<<"Diameter = "<<diameter;
+    cout<<"Diameter = "<<diameter<<endl;
+    int maxSum=INT_MIN;
+    cout<<"Maximum Path sum = "<<MaxPathsum(root,maxSum);
     return 0;
 }
