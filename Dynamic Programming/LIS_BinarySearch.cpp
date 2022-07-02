@@ -3,7 +3,7 @@ using namespace std;
 
 int LIS(vector<int> &arr, int n)
 {
-    int len=0;
+    int len=1;
     vector<int> temp;
     temp.push_back(arr[0]);
     for(int i=1;i<n;i++)
