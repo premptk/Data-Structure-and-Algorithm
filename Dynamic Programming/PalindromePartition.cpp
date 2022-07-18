@@ -66,7 +66,7 @@ int PalinPart3(string &str)
         {
             if(isPalin(ind,i,str))
             {
-                int cnt = 1 + PalinPart2(i+1, n, str,dp);
+                int cnt = 1 + dp[i+1];
                 mini = min(cnt, mini);
             }
         }
