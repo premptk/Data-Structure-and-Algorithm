@@ -6,3 +6,5 @@ Topics:
 5. Print all the Nodes at a distance of K in Binary Tree
 6. Morris traversal
 7. Flatten a Binary Tree To Linked List
+8. Morris Traversal
+9. Flatten a Binary Tree
